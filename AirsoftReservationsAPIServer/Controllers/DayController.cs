@@ -46,11 +46,10 @@ namespace AirsoftReservationsAPIServer.Controllers
         public DayVM Get(int day, int month, int year)
         {
             var date = new DateTime(year, month, day);
-            var dayModel = context.Days.Where(d => d.Date == date)
+            var dayModel = context.Days.Where(d => d.Date.Equals(date))
                 .Select(d => new DayVM{   
                     Id = d.Id,
-                    Date = d.Date.HasValue ? d.Date.Value.ToString("dd/MM/yyyy") : DateTime.Today.ToString("dd/MM/yyyy"),
-                    Games = new List<GameVM>()
+                    Date = d.Date.HasValue ? d.Date.Value : DateTime.Today,
                     //Games = context.Games.Where(g=> g.DayId.Equals(d.Id)).Select(g => new GameVM
                     //{
                     //    GameStart = g.GameStart.HasValue ? g.GameStart.Value : new DateTime(),

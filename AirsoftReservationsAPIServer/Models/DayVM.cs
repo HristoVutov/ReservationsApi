@@ -8,7 +8,7 @@ namespace AirsoftReservationsAPIServer.Models
     public class DayVM
     {
         public int Id { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         public List<GameVM> Games { get; set; }
     }
