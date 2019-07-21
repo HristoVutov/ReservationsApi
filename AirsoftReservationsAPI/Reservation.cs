@@ -19,10 +19,6 @@ namespace AirsoftReservationsAPI
         public Nullable<int> NumberOfGuns { get; set; }
         public Nullable<int> NumberOfMagazines { get; set; }
         public Nullable<int> NumberOfPeople { get; set; }
-        public string Status { get; set; }
         public Nullable<int> GameId { get; set; }
-    
-        public virtual Game Game { get; set; }
-        public virtual User User { get; set; }
     }
 }

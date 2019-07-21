@@ -14,22 +14,9 @@ namespace AirsoftReservationsAPI
     
     public partial class Game
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public static int counter = 0;
-        public Game()
-        {
-            this.Reservations = new HashSet<Reservation>();
-            this.Id = counter;
-            counter++;
-        }
-    
         public int Id { get; set; }
-        public DateTime? GameStart { get; set; }
-        public DateTime? GameEnd { get; set; }
+        public Nullable<System.DateTime> GameStart { get; set; }
+        public Nullable<System.DateTime> GameEnd { get; set; }
         public Nullable<int> DayId { get; set; }
-    
-        public virtual Day Day { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

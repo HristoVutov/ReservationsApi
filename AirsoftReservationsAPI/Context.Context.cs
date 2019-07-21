@@ -13,10 +13,10 @@ namespace AirsoftReservationsAPI
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AirsoftReservationsEntities : DbContext
+    public partial class ReservationsDatabaseEntities : DbContext
     {
-        public AirsoftReservationsEntities()
-            : base("name=AirsoftReservationsEntities")
+        public ReservationsDatabaseEntities()
+            : base("name=ReservationsDatabaseEntities")
         {
         }
     
@@ -28,7 +28,6 @@ namespace AirsoftReservationsAPI
         public virtual DbSet<Day> Days { get; set; }
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

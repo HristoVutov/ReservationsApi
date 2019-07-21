@@ -50,65 +50,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AirsoftReservationsContext.Context.cs">
+    <Compile Include="Context.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AirsoftReservationsContext.Context.tt</DependentUpon>
+      <DependentUpon>Context.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AirsoftReservationsContext.cs">
+    <Compile Include="Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AirsoftReservationsContext.tt</DependentUpon>
+      <DependentUpon>Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AirsoftReservationsContext.Designer.cs">
+    <Compile Include="Context.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AirsoftReservationsContext.edmx</DependentUpon>
+      <DependentUpon>Context.edmx</DependentUpon>
     </Compile>
     <Compile Include="Day.cs">
-      <DependentUpon>AirsoftReservationsContext.tt</DependentUpon>
+      <DependentUpon>Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Game.cs">
-      <DependentUpon>AirsoftReservationsContext.tt</DependentUpon>
+      <DependentUpon>Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs">
-      <DependentUpon>AirsoftReservationsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>AirsoftReservationsContext.tt</DependentUpon>
+      <DependentUpon>Context.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>AirsoftReservationsContext.tt</DependentUpon>
+      <DependentUpon>Context.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="AirsoftReservationsContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AirsoftReservationsContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="AirsoftReservationsContext.edmx.diagram">
-      <DependentUpon>AirsoftReservationsContext.edmx</DependentUpon>
-    </None>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AirsoftReservationsContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AirsoftReservationsContext.edmx</DependentUpon>
-      <LastGenOutput>AirsoftReservationsContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="AirsoftReservationsContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AirsoftReservationsContext.edmx</DependentUpon>
-      <LastGenOutput>AirsoftReservationsContext.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Context.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Context.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Context.edmx.diagram">
+      <DependentUpon>Context.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Context.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Context.edmx</DependentUpon>
+      <LastGenOutput>Context.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Context.edmx</DependentUpon>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

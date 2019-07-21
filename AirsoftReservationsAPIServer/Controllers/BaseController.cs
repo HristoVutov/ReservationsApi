@@ -9,11 +9,11 @@ namespace AirsoftReservationsAPIServer.Controllers
 {
     public abstract partial class BaseController : ApiController
     {
-        public AirsoftReservationsEntities context;
+        public ReservationsDatabaseEntities context;
 
         public BaseController()
         {
-            context = new AirsoftReservationsEntities();
+            context = new ReservationsDatabaseEntities();
         }
        
     }
