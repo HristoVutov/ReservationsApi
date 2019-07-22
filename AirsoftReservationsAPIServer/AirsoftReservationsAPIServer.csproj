@@ -164,12 +164,14 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DayVM.cs" />
     <Compile Include="Models\GameVM.cs" />
+    <Compile Include="Models\ReservationVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\RequireHttpsAttribute.cs" />
   </ItemGroup>
@@ -229,6 +231,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Day\" />
+    <Folder Include="Views\Reservation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
