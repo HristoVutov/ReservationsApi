@@ -7,6 +7,7 @@ namespace AirsoftReservationsAPIServer.Models
 {
     public class GameVM
     {
+        public int GameId { get; set; }
         public DateTime GameStart { get; set; }
         public DateTime GameEnd { get; set; }
         public int Reservations { get; set; }

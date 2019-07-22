@@ -51,8 +51,10 @@ namespace AirsoftReservationsAPIServer.Controllers
                     Date = d.Date.HasValue ? d.Date.Value : DateTime.Today,
                     Games = context.Games.Where(g => g.DayId.Value == d.Id).Select(g => new GameVM
                     {
+                        GameId = g.Id,
                         GameStart = g.GameStart.HasValue ? g.GameStart.Value : new DateTime(),
-                        GameEnd = g.GameEnd.HasValue ? g.GameEnd.Value : new DateTime()
+                        GameEnd = g.GameEnd.HasValue ? g.GameEnd.Value : new DateTime(),
+                        Reservations = context.Reservations.Where(r => r.GameId == g.Id).Select(r => r.NumberOfPeople.HasValue ? r.NumberOfPeople.Value : 0).ToList().Sum(),
                     }).ToList()
                 }
             ).FirstOrDefault();
