@@ -11,7 +11,8 @@ namespace AirsoftReservationsAPIServer.Controllers
 {
     public class ReservationController : BaseController
     {
-        // GET: Reservation
+        // Post: Reservation
+        [HttpPost]
         public OkResult Post(ReservationVM model)
         {
             var reservation = new Reservation()
