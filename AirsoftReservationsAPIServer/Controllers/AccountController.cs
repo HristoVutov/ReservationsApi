@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace AirsoftReservationsAPIServer.Controllers
@@ -13,6 +14,23 @@ namespace AirsoftReservationsAPIServer.Controllers
     {
         // GET: Account     
 
-       
+        public async Task<IHttpActionResult> Register(RegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = new User
+            {
+                Name = model.Username,
+                Password = model.Password,
+            };
+
+            context.Users.Add(user);
+            context.SaveChanges();
+
+            return Ok();
+        }
     }
 }
