@@ -64,7 +64,7 @@ namespace AirsoftReservationsAPIServer.Controllers
 
                 if(reservations.Any())
                 {
-                    game.Reservations = context.Reservations.Where(r => r.GameId == game.GameId).Sum(r => r.NumberOfPeople.HasValue ? r.NumberOfPeople.Value : 0);
+                    game.Reservations = context.Reservations.Where(r => r.GameId == game.GameId).ToList().Sum(r => r.NumberOfPeople.HasValue ? r.NumberOfPeople.Value : 0);
                 }
             }
 
