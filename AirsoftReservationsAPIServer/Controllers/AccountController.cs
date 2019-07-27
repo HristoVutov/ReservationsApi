@@ -13,7 +13,7 @@ namespace AirsoftReservationsAPIServer.Controllers
     public class AccountController : BaseController
     {
         // GET: Account     
-
+        [System.Web.Http.Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
