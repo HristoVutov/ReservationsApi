@@ -42,6 +42,7 @@ namespace AirsoftReservationsAPIServer.Controllers
             }
         }
 
+        
         public DayVM Get(int day, int month, int year)
         {
             var date = new DateTime(year, month, day);

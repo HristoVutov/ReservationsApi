@@ -16,10 +16,7 @@ namespace AirsoftReservationsAPIServer.Controllers
         [System.Web.Mvc.Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+           
 
             var user = new User
             {
