@@ -1,4 +1,5 @@
 ﻿using AirsoftReservationsAPI;
+using AirsoftReservationsAPIServer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace AirsoftReservationsAPIServer.Repository
 {
     public class AccountRepository : BaseRepository
     {
-        public User Authorize(string username, string password)
+        public UserVM Authorize(string username, string password)
         {
-            var acc = context.Users.Where(c => c.Name.Equals(username)).Select(c => new User
+            var acc = context.Users.Where(c => c.Name == username).Select(c => new UserVM
             {
-                Name = c.Name,
+                Username = c.Name,
                 Email = c.Email
             }).FirstOrDefault();
 

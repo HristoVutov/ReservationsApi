@@ -62,7 +62,7 @@ namespace AirsoftReservationsAPIServer
 
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
 
-                identity.AddClaim(new Claim(ClaimTypes.Name, user.Name));
+                identity.AddClaim(new Claim(ClaimTypes.Name, user.Username));
                 identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
 
                 //roles example
