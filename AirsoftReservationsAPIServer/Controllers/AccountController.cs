@@ -16,7 +16,24 @@ namespace AirsoftReservationsAPIServer.Controllers
         [System.Web.Mvc.Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterViewModel model)
         {
-           
+            if (!string.IsNullOrEmpty(model.Password) && !string.IsNullOrEmpty(model.ConfirmPassword))
+            {
+                if (model.ConfirmPassword != model.Password)
+                {
+                    return BadRequest();
+                }
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+            var userCheck = context.Users.Where(c => c.Name.Equals(model.Username)).Any();
+
+            if (userCheck)
+            {
+                return BadRequest();
+            }
 
             var user = new User
             {
