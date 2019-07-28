@@ -13,15 +13,18 @@ namespace AirsoftReservationsAPIServer.Controllers
     {
         // Post: Reservation
         [HttpPost]
+        [Authorize]
         public OkResult Post(ReservationVM model)
         {
+            var userId = context.Users.Where(c => c.Name == User.Identity.Name).Select(c => c.Id).FirstOrDefault();
             var reservation = new Reservation()
             {
+                
                 GameId = model.GameId,
                 NumberOfGuns = model.NumberOfGuns,
                 NumberOfMagazines = model.NumberOfMagazines,
                 NumberOfPeople = model.NumberOfPeople,
-                ReservationBy = model.ReservationBy
+                ReservationBy = userId
             };
             context.Reservations.Add(reservation);
             context.SaveChanges();
