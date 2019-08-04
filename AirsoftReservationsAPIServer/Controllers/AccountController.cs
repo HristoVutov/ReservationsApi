@@ -20,19 +20,19 @@ namespace AirsoftReservationsAPIServer.Controllers
             {
                 if (model.ConfirmPassword != model.Password)
                 {
-                    return BadRequest();
+                    return BadRequest("Passwords do not match!");
                 }
             }
             else
             {
-                return BadRequest();
+                return BadRequest("All fields are required!");
             }
 
             var userCheck = context.Users.Where(c => c.Name.Equals(model.Username)).Any();
 
             if (userCheck)
             {
-                return BadRequest();
+                return BadRequest("User already exists!");
             }
 
             var user = new User
@@ -44,7 +44,7 @@ namespace AirsoftReservationsAPIServer.Controllers
             context.Users.Add(user);
             context.SaveChanges();
 
-            return Ok();
+            return Ok("User created successfully!");
         }
     }
 }
