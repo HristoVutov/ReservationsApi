@@ -38,7 +38,6 @@ namespace AirsoftReservationsAPIServer.Controllers
                     context.Games.Add(gameO);
                     context.SaveChanges();
                 }
-
             }
         }
 
@@ -46,6 +45,7 @@ namespace AirsoftReservationsAPIServer.Controllers
         public DayVM Get(int day, int month, int year)
         {
             var date = new DateTime(year, month, day);
+
             var dayModel = context.Days.Where(d => d.Date == date)
                 .Select(d => new DayVM {
                     Id = d.Id,

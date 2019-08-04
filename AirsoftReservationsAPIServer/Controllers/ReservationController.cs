@@ -1,5 +1,6 @@
 ﻿using AirsoftReservationsAPI;
 using AirsoftReservationsAPIServer.Models;
+using AirsoftReservationsAPIServer.Models.Reservation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,23 @@ namespace AirsoftReservationsAPIServer.Controllers
             context.SaveChanges();
 
             return Ok();
+        }
+
+        [Authorize]
+        public List<ReservationGet> Get(int id)
+        {
+            var userRole = context.Users.Where(c => c.Name == User.Identity.Name).Select(c => c.RoleId).FirstOrDefault();
+
+            
+            var reservation = context.Reservations.Where(c => c.GameId == id).Select(c => new ReservationGet
+            {
+                Id = c.Id,
+                NumberOfGuns = c.NumberOfGuns != null ? c.NumberOfGuns.Value : 0,
+                NumberOfMagazines = c.NumberOfMagazines != null ? c.NumberOfGuns.Value : 0,
+                NumberOfPeople = c.NumberOfPeople != null ? c.NumberOfPeople.Value : 0,
+            }).ToList();
+
+            return reservation;
         }
     }
 }

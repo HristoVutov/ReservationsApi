@@ -39,6 +39,7 @@ namespace AirsoftReservationsAPIServer.Controllers
             {
                 Name = model.Username,
                 Password = model.Password,
+                RoleId = 2
             };
 
             context.Users.Add(user);

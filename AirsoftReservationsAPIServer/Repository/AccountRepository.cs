@@ -15,7 +15,8 @@ namespace AirsoftReservationsAPIServer.Repository
             var acc = context.Users.Where(c => c.Name == username).Select(c => new UserVM
             {
                 Username = c.Name,
-                Email = c.Email
+                Email = c.Email,
+                RoleId = c.RoleId
             }).FirstOrDefault();
 
             return acc;

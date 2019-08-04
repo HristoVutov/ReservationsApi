@@ -64,6 +64,7 @@ namespace AirsoftReservationsAPIServer
 
                 identity.AddClaim(new Claim(ClaimTypes.Name, user.Username));
                 identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
+                identity.AddClaim(new Claim(ClaimTypes.Role, user.RoleId.ToString()));
 
                 //roles example
                 var rolesTechnicalNamesUser = new List<string>();

@@ -201,6 +201,7 @@
     <Compile Include="Models\GameVM.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\ReservationVM.cs" />
+    <Compile Include="Models\Reservation\ReservationGet.cs" />
     <Compile Include="Models\UserVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
